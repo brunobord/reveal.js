@@ -12,7 +12,7 @@
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/reveal.min.css">
 		<link rel="stylesheet" href="css/theme/default.css" id="theme">
 
 		<!-- For syntax highlighting -->
@@ -61,9 +61,9 @@
 						<h2>Vertical Slides</h2>
 						<p>
 							Slides can be nested inside of other slides,
-							try pressing <a href="#/2/1">down</a>.
+							try pressing <a href="#" class="navigate-down">down</a>.
 						</p>
-						<a href="#/2/1" class="image">
+						<a href="#" class="image navigate-down">
 							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
 						</a>
 					</section>
@@ -164,6 +164,7 @@
 						<a href="?theme=beige#/themes">Beige</a> -
 						<a href="?theme=simple#/themes">Simple</a> -
 						<a href="?theme=serif#/themes">Serif</a> -
+						<a href="?theme=night#/themes">Night</a> -
 						<a href="?#/themes">Default</a>
 					</p>
 					<p>
@@ -181,20 +182,20 @@
 							will be added as a class to the document element when the slide is open. This lets you
 							apply broader style changes, like switching the background.
 						</p>
-						<a href="#/7/1" class="image">
+						<a href="#" class="image navigate-down">
 							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
 						</a>
 					</section>
 					<section data-state="blackout">
 						<h2>"blackout"</h2>
-						<a href="#/7/2" class="image">
+						<a href="#" class="image navigate-down">
 							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
 						</a>
 					</section>
 					<section data-state="soothe">
 						<h2>"soothe"</h2>
-						<a href="#/7/0" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
+						<a href="#" class="image navigate-next">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(-90deg);">
 						</a>
 					</section>
 				</section>
@@ -350,6 +351,7 @@ function linkify( selector ) {
 				controls: true,
 				progress: true,
 				history: true,
+				center: true,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
@@ -362,6 +364,7 @@ function linkify( selector ) {
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
 
